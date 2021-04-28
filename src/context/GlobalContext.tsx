@@ -30,6 +30,8 @@ export const GlobalContext = createContext<InitialStateType>(initialState);
 
 // Create Global provider which will feed state to our components
 export const GlobalProvider: React.FC = ({ children }) => {
+  // useReducer is a react hook, to access and
+  // update our state in our reducer function
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   const getProducts = async () => {
@@ -46,7 +48,11 @@ export const GlobalProvider: React.FC = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ products: state.products, cart: state.cart, getProducts }}>
+      value={{
+        products: state.products,
+        cart: state.cart,
+        getProducts,
+      }}>
       {children} {/* <AppRouter/> */}
     </GlobalContext.Provider>
   );
