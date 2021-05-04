@@ -4,7 +4,7 @@ import { setTypeColor } from '../services';
 
 const SingleProductCard = () => {
 
-    const { product } = useContext(GlobalContext);
+    const { product, getDecimalFormat } = useContext(GlobalContext);
 
     if (!product) {
         return (
@@ -37,7 +37,7 @@ const SingleProductCard = () => {
                         <h3 className='card-title'>
                             {product.title}
                             <div className=''>
-                            <small className='text-info'>${product.price}</small>
+                            <small className='text-info'>${getDecimalFormat(+product.price)}</small>
                             </div>
                         </h3>
                         {/* product details */}

@@ -8,6 +8,7 @@ const initialState = {
   product: undefined,
   getProducts: () => {},
   getSingleProduct: () => {},
+  getDecimalFormat: (num: number) => " "
 };
 
 // Create our global reducer
@@ -65,6 +66,10 @@ export const GlobalProvider: React.FC = ({ children }) => {
     }
   };
 
+  const getDecimalFormat = (num: number) => {
+    return num.toFixed(2);
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -73,6 +78,7 @@ export const GlobalProvider: React.FC = ({ children }) => {
         product: state.product,
         getProducts,
         getSingleProduct,
+        getDecimalFormat
       }}>
       {children} {/* <AppRouter/> */}
     </GlobalContext.Provider>
