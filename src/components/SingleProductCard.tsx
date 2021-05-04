@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
+import { setTypeColor } from '../services';
 
 const SingleProductCard = () => {
 
@@ -44,7 +45,7 @@ const SingleProductCard = () => {
                             <h4>Description</h4>
                             <p>{product.description}</p>
                             <div>
-                            <span className='badge badge-warning'>
+                            <span className='badge badge-pill text-white' style={{ backgroundColor: setTypeColor(product.category) }}>
                                 {product.category}
                             </span>
                             </div>

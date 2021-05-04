@@ -1,21 +1,21 @@
 enum TypeColor {
-    Electronics = 'bg-warning',
-    Jewelry = 'bg-primary',
-    MenClothing = 'bg-danger',
-    WomenClothing = 'bg-info',
+    Electronics = '#ffc107',
+    Jewelery = '#007bff',
+    MenClothing = '#dc3545',
+    WomenClothing = '#17a2b8',
 }
 
-  export const setTypeColor = (type: string): string => {
+export const setTypeColor = (type: string): string => {
     switch (type) {
-      case "electronics":
-        return TypeColor.Electronics;
-      case "jewelry":
-        return TypeColor.Jewelry;
-      case "men's clothing":
-        return TypeColor.MenClothing;
-      case "women's clothing":
-        return TypeColor.WomenClothing;
-      default:
-        return '#333';
+        case "electronics":
+            return TypeColor.Electronics;
+        case "jewelery":
+            return TypeColor.Jewelery;
+        case "men's clothing":
+            return TypeColor.MenClothing;
+        case "women's clothing":
+            return TypeColor.WomenClothing;
+        default:
+            return '#333';
     }
-  };
+};
